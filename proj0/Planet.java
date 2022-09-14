@@ -5,8 +5,8 @@ public class Planet{
     public double yyPos;
     public double xxVel;
     public double yyVel;
-    double mass;
-    String imgFileName;
+    public double mass;
+    public String imgFileName;
     public Planet(double xP, double yP, double xV,
                   double yV, double m, String img)
         {
@@ -41,7 +41,7 @@ public class Planet{
         return G*this.mass*p.mass/(r * r);
     }
 /** If the two planets are identical */
-    public boolean equals(Planet p){
+    private boolean equals(Planet p){
         return this == p;
     }
 /** Calculate the net force in x-direction */

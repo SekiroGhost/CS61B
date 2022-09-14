@@ -14,8 +14,8 @@ public class NBody {
         In in = new In(s);
         int n = in.readInt();
         res = new Planet[n];
-        in.readDouble();
-        for (int i = 0; i < 5; i ++){
+        double r = in.readDouble();
+        for (int i = 0; i < res.length; i ++){
             double xp = in.readDouble();
             double yp = in.readDouble();
             double xv = in.readDouble();
@@ -29,7 +29,7 @@ public class NBody {
     }
 /**Drawing part */
 
-    public static void drawBackGround(double r) {
+    private static void drawBackGround(double r) {
         /** Sets up the universe so it goes from 
          * radius */
         String backGround = "./images/starfield.jpg";
@@ -56,6 +56,7 @@ public class NBody {
         double radius = readRadius(filename);
         StdDraw.enableDoubleBuffering();
         drawBackGround(radius);
+        System.out.println(p[0].calcNetForceExertedByY(p));
         for (int i = 0; i < p.length; i++){
             p[i].draw();
         }
