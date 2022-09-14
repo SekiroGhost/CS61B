@@ -73,6 +73,7 @@ public double calcForceExertedByX(Planet p){
         double res = 0;
         for (i = 0; i < p.length - 1; i ++){
             if (this.equals(p[i])){
+                continue;
             }
             else{
                 res += this.calcForceExertedByX(p[i]);
@@ -86,6 +87,7 @@ public double calcForceExertedByX(Planet p){
         double res = 0;
         for (i = 0; i < p.length; i ++){
             if (this.equals(p[i])){
+                continue;
             }
             else{
                 res += this.calcForceExertedByY(p[i]);
