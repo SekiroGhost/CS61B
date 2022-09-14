@@ -55,7 +55,7 @@ public class NBody {
         Planet[] p = readPlanets(filename);
         double radius = readRadius(filename);
         drawBackGround(radius);
-        System.out.println(p[0].calcNetForceExertedByX(p));
+        //System.out.println(p[0].calcNetForceExertedByX(p));
         for (int i = 0; i < p.length; i++){
             p[i].draw();
         }
