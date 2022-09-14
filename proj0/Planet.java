@@ -44,7 +44,7 @@ public class Planet{
     private boolean equals(Planet p){
         return this == p;
     }
-/** Calculate the net force in x-direction */
+/** Calculate the force in x-direction */
 public double calcForceExertedByX(Planet p){
     double res = 0;
     double F, dx, r;

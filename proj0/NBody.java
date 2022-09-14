@@ -54,7 +54,6 @@ public class NBody {
         dt = Double.parseDouble(args[1]);
         Planet[] p = readPlanets(filename);
         double radius = readRadius(filename);
-        StdDraw.enableDoubleBuffering();
         drawBackGround(radius);
         System.out.println(p[0].calcNetForceExertedByY(p));
         for (int i = 0; i < p.length; i++){
@@ -76,6 +75,8 @@ public class NBody {
                 p[i].draw();
             }
         StdDraw.pause(10);
+        StdDraw.enableDoubleBuffering();
+        StdDraw.show();
         StdDraw.clear();
         time += dt;
         }
