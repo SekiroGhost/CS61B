@@ -3,7 +3,7 @@ public class NBody {
     /** Read the universal radius in the file */
     public static double readRadius(String s){
         In in = new In(s);
-        in.readInt();
+        int n = in.readInt();
         double radius = in.readDouble();
         return radius;
     }
