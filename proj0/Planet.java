@@ -7,6 +7,7 @@ public class Planet{
     public double yyVel;
     public double mass;
     public String imgFileName;
+    private static final double G = 6.67e-11;
     public Planet(double xP, double yP, double xV,
                   double yV, double m, String img)
         {
@@ -35,7 +36,6 @@ public class Planet{
     }
 /** Calculate the force between two planets */
     public double calcForceExertedBy(Planet p){
-        double G = 6.67E-11;
         double r = this.calcDistance(p);
         
         return G*this.mass*p.mass/(r * r);
@@ -46,25 +46,19 @@ public class Planet{
     }
 /** Calculate the force in x-direction */
 public double calcForceExertedByX(Planet p){
-    double res = 0;
     double F, dx, r;
     F = this.calcForceExertedBy(p);
     dx = p.xxPos - this.xxPos;
     r = this.calcDistance(p);
-    res += F*dx/r;
-
-
-    return res;
+    return F * dx/r;
 }
 /** Calculate the net force in y-direction */
     public double calcForceExertedByY(Planet p){
-        double res = 0;
         double F, dy, r;
         F = this.calcForceExertedBy(p);
         dy = p.yyPos - this.yyPos;
         r = this.calcDistance(p);
-        res += F*dy/r;
-        return res;
+        return F * dy/r;
     }
     /** Calculate the net force on x or y direction */
 
@@ -112,6 +106,5 @@ public double calcForceExertedByX(Planet p){
 
     public void draw(){
         StdDraw.picture(this.xxPos, this.yyPos, "./images/" + this.imgFileName);
-        StdDraw.show();
     }
 }
