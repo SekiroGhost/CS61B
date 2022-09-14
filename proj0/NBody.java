@@ -73,7 +73,7 @@ public class NBody {
             for (int i = 0; i < p.length; i++){
                 p[i].draw();
             }
-        StdDraw.pause(1);
+        StdDraw.pause(10);
         StdDraw.clear();
         time += dt;
         }
