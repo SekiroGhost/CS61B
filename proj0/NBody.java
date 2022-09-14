@@ -10,9 +10,10 @@ public class NBody {
 
     /** Read the planet in the file */
     public static Planet[] readPlanets(String s){
-        Planet[] res = new Planet[5];
+        Planet[] res;
         In in = new In(s);
-        in.readInt();
+        int n = in.readInt();
+        res = new Planet[n];
         in.readDouble();
         for (int i = 0; i < 5; i ++){
             double xp = in.readDouble();
