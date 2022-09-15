@@ -78,9 +78,7 @@ public double calcForceExertedByX(Planet p){
             if (this.equals(pp)){
                 continue;
             }
-            
             res += calcForceExertedByY(pp);
-            
         }
         return res;
     }
