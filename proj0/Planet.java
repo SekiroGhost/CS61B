@@ -61,12 +61,12 @@ public double calcForceExertedByX(Planet p){
 
     public double calcNetForceExertedByX(Planet[] p){
         double res = 0;
-        for (int i = 0; i < p.length - 1; i ++){
-            if (this.equals(p[i])){
+        for (Planet pp : p){
+            if (this.equals(pp)){
                 continue;
             }
             else{
-                res += calcForceExertedByX(p[i]);
+                res += calcForceExertedByX(pp);
             }
         }
         return res;
@@ -74,12 +74,12 @@ public double calcForceExertedByX(Planet p){
 
     public double calcNetForceExertedByY(Planet[] p){
         double res = 0;
-        for (int i = 0; i < p.length; i ++){
-            if (this.equals(p[i])){
+        for (Planet pp : p){
+            if (this.equals(pp)){
                 continue;
             }
             else{
-                res += calcForceExertedByY(p[i]);
+                res += calcForceExertedByY(pp);
             }
         }
         return res;
