@@ -65,9 +65,9 @@ public double calcForceExertedByX(Planet p){
             if (this.equals(pp)){
                 continue;
             }
-            else{
-                res += calcForceExertedByX(pp);
-            }
+            
+            res += calcForceExertedByX(pp);
+            
         }
         return res;
     }
@@ -78,9 +78,9 @@ public double calcForceExertedByX(Planet p){
             if (this.equals(pp)){
                 continue;
             }
-            else{
-                res += calcForceExertedByY(pp);
-            }
+            
+            res += calcForceExertedByY(pp);
+            
         }
         return res;
     }
