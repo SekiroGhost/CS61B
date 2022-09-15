@@ -1,4 +1,4 @@
-import java.lang.Math;
+
 
 public class Planet{
     public double xxPos;
@@ -59,33 +59,29 @@ public double calcForceExertedByX(Planet p){
     }
     /** Calculate the net force on x or y direction */
 
-    public double calcNetForceExertedByX(Planet[] p){
-        int i;
-        double res = 0;
-        for (i = 0; i < p.length - 1; i ++){
-            if (this.equals(p[i])){
-                continue;
-            }
-            else{
-                res += this.calcForceExertedByX(p[i]);
-            }
-        }
-        return res;
-    }
+	public double calcNetForceExertedByX(Planet[] allPlanets)
+	{
+		double totalForce = 0;
+		for (Planet planet : allPlanets) {
+			if (this.equals(planet)) {
+				continue;	
+			}
+			totalForce += calcForceExertedByX(planet);
+		}
+		return totalForce;
+	}
 
-    public double calcNetForceExertedByY(Planet[] p){
-        int i;
-        double res = 0;
-        for (i = 0; i < p.length; i ++){
-            if (this.equals(p[i])){
-                continue;
-            }
-            else{
-                res += this.calcForceExertedByY(p[i]);
-            }
-        }
-        return res;
-    }
+	public double calcNetForceExertedByY(Planet[] allPlanets)
+	{
+		double totalForce = 0;
+		for (Planet planet : allPlanets) {
+			if (this.equals(planet)) {
+				continue;	
+			}
+			totalForce += calcForceExertedByY(planet);
+		}
+		return totalForce;
+	}
 
 /** Update the position by force */
 
