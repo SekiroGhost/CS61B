@@ -29,7 +29,9 @@ public class ArrayDeque<T> {
     }
 
     private T[] decreasSizing(){
-        T[] newItem = (T[]) new Object[item.length/4];
+        int newSize = item.length/4;
+        if (newSize < 8){newSize = 8;}
+        T[] newItem = (T[]) new Object[newSize];
         if (first < last){
             System.arraycopy(item, first+1, newItem, 1, last-first);
             last = last-first;
