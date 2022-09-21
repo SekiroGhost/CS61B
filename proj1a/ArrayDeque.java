@@ -64,7 +64,7 @@ public class ArrayDeque<T> {
             item[last] = it;
             last += 1;
             size += 1;
-            if(last > item.length){
+            if(last >= item.length){
                 last -= item.length;
             }
         }

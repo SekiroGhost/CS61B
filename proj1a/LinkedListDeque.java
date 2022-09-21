@@ -170,7 +170,7 @@ public class LinkedListDeque<T>{
         }
     }
 
-
+/** 
     public static void main(String[] args) {
         LinkedListDeque<Integer> s1 = new LinkedListDeque();
         s1.printDeque();
@@ -184,5 +184,5 @@ public class LinkedListDeque<T>{
         s1.addFirst(7);
         s1.addFirst(8);
         System.out.println(s1.removeLast());
-    }
+    }*/
 }
