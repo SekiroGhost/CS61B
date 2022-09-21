@@ -1,8 +1,8 @@
 public class ArrayDeque<T> {
-    T[] item;
+    private T[] item;
     private int size;
-    int first;
-    int last;
+    private int first;
+    private int last;
 
     public ArrayDeque() {
         item = (T[]) new Object[8];
@@ -10,14 +10,14 @@ public class ArrayDeque<T> {
         first = 0;
         last = 1;
     }
-
+/** 
     public ArrayDeque(T it) {
         item = (T[]) new Object[8];
         size = 1;
         first = 0;
         last = 1;
         item[first+1] = it;
-    }
+    }*/
 
     private T[] resizing(){
         T[] newItem = (T[]) new Object[size*2];
@@ -139,7 +139,7 @@ public class ArrayDeque<T> {
         System.out.println();
     }
 
-
+/** 
     public static void main(String[] args) {
         ArrayDeque<Integer> s1 = new ArrayDeque<>();
         
@@ -169,4 +169,5 @@ public class ArrayDeque<T> {
 
         s1.printDeque();
     }
+    */
 }

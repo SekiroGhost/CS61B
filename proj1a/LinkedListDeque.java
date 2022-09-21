@@ -68,6 +68,7 @@ public class LinkedListDeque<T>{
         Node p = new Node(it);
         p.next = first.next;
         p.prev = first;
+        first.next.prev = p;
         first.next = p;
         size += 1;}
     }
@@ -130,8 +131,8 @@ public class LinkedListDeque<T>{
         }
         else{
             Node p = last.prev;
-            last.prev = p.prev;
-            p.prev.next = last;
+            last.prev = last.prev.prev;
+            last.prev.next = last;
             size -= 1;
             return p.item;
         }
@@ -169,29 +170,19 @@ public class LinkedListDeque<T>{
         }
     }
 
-    /** 
+
     public static void main(String[] args) {
         LinkedListDeque<Integer> s1 = new LinkedListDeque();
         s1.printDeque();
+        s1.addFirst(0);
         s1.addFirst(1);
         s1.addFirst(2);
         s1.addFirst(3);
-        s1.addLast(1);
-        s1.addLast(2);
-        s1.addLast(3);
-
-        s1.printDeque();
-
-        System.out.println(s1.removeFirst());
         System.out.println(s1.removeLast());
-
-        s1.printDeque();
-
-        System.out.println(s1.get(1));
-        System.out.println(s1.get(0));
-
-        System.out.println(s1.getRecursive(1));
-        System.out.println(s1.getRecursive(0));
-        s1.printDeque();
-    }*/
+        s1.addFirst(5);
+        s1.addFirst(6);
+        s1.addFirst(7);
+        s1.addFirst(8);
+        System.out.println(s1.removeLast());
+    }
 }
