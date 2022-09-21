@@ -1,11 +1,11 @@
 import java.rmi.Remote;
 
 public class LinkedListDeque<T>{
-    Node last;
-    Node first;
-    int size;
+    private Node last;
+    private Node first;
+    private int size;
 
-    public class Node{
+    private class Node{
         Node prev;
         T item;
         Node next;
@@ -37,7 +37,7 @@ public class LinkedListDeque<T>{
         first.prev = last;
         size = 0;
     }
-
+    /** 
     public LinkedListDeque(T it){
         Node p = new Node(it);
         last = new Node(null);
@@ -49,7 +49,7 @@ public class LinkedListDeque<T>{
         p.next = last;
 
         size = 1;
-    }
+    }*/
 
     public void addFirst(T it){
         if (size == 0){
@@ -169,7 +169,7 @@ public class LinkedListDeque<T>{
         }
     }
 
-
+    /** 
     public static void main(String[] args) {
         LinkedListDeque<Integer> s1 = new LinkedListDeque();
         s1.printDeque();
@@ -193,5 +193,5 @@ public class LinkedListDeque<T>{
         System.out.println(s1.getRecursive(1));
         System.out.println(s1.getRecursive(0));
         s1.printDeque();
-    }
+    }*/
 }

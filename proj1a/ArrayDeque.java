@@ -1,17 +1,17 @@
 public class ArrayDeque<T> {
     T[] item;
-    int size;
+    private int size;
     int first;
     int last;
 
-    public ArrayDeque(){
+    public ArrayDeque() {
         item = (T[]) new Object[8];
         size = 0;
         first = 0;
         last = 1;
     }
 
-    public ArrayDeque(T it){
+    public ArrayDeque(T it) {
         item = (T[]) new Object[8];
         size = 1;
         first = 0;
@@ -87,28 +87,36 @@ public class ArrayDeque<T> {
         return size;
     }
 
-    public void removeFirst(){
+    public T removeFirst(){
         first += 1;
         if (first >= item.length){
             first -= item.length;
         }
+        T res = item[first];
         item[first] = null;
         size -= 1;
         if(size < item.length/4-1){
             item = decreasSizing();
         }
+        return res;
     }
 
-    public void removeLast(){
+    public T removeLast(){
         last -= 1;
         if (last < 0){
             last += item.length;
         }
+        T res = item[first];
         item[last] = null;
         size -= 1;
         if(size < item.length/4-1){
             item = decreasSizing();
         }
+        return res;
+    }
+
+    public boolean isEmpty(){
+        return size == 0;
     }
 
     public void printDeque(){
