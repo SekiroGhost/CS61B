@@ -79,7 +79,7 @@ public class ArrayDeque<T> {
             return null;
         }
         else{
-            return item[index];
+            return item[(first + 1 + index)%item.length];
         }
     }
 
@@ -88,6 +88,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst(){
+        if (size < 1){
+            return null;
+        }
         first += 1;
         if (first >= item.length){
             first -= item.length;
@@ -102,6 +105,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast(){
+        if (size < 1){
+            return null;
+        }
         last -= 1;
         if (last < 0){
             last += item.length;
