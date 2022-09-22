@@ -114,7 +114,7 @@ public class ArrayDeque<T> {
         if (last < 0){
             last += item.length;
         }
-        T res = item[first];
+        T res = item[last];
         item[last] = null;
         size -= 1;
         if(size < item.length/4-1){
@@ -147,7 +147,7 @@ public class ArrayDeque<T> {
         System.out.println();
     }
 
-/** 
+    /** 
     public static void main(String[] args) {
         ArrayDeque<Integer> s1 = new ArrayDeque<>();
         
@@ -164,18 +164,8 @@ public class ArrayDeque<T> {
 
         s1.addFirst(40);
         s1.addLast(40);
-        s1.addFirst(50);
-
-        s1.removeFirst();
-        s1.removeLast();
-        s1.removeFirst();;
-        s1.removeLast();
-        s1.removeFirst();
-        s1.removeLast();
-        s1.removeFirst();;
-        s1.removeLast();
-
-        s1.printDeque();
-    }
-    */
+        System.out.println(s1.removeFirst());
+        System.out.println(s1.removeLast());
+    } */
+    
 }
