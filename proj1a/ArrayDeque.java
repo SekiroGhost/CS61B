@@ -77,12 +77,12 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index){
-        int actualIndex = first + index;
+        int actualIndex = first + index +1;
         if (index > item.length){
             return null;
         }
         else{
-            if(actualIndex > item.length){
+            if(actualIndex >= item.length){
                 actualIndex -= item.length;
             }
             return item[actualIndex];
@@ -157,9 +157,8 @@ public class ArrayDeque<T> {
         
         s1.addFirst(10);
 
+        System.out.println(s1.get(0));
         System.out.println(s1.removeLast());
-        s1.addFirst(20);
-        System.out.println(s1.removeLast());
-    } */
-    
+    } 
+    */
 }
