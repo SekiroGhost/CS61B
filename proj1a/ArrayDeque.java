@@ -30,7 +30,7 @@ public class ArrayDeque<T> {
 
     private T[] decreasSizing(){
         int newSize = item.length/4;
-        if (newSize < 8){newSize = 8;}
+        if (newSize < 8){return this.item;}
         T[] newItem = (T[]) new Object[newSize];
         if (first < last){
             System.arraycopy(item, first+1, newItem, 1, last-first);
@@ -77,11 +77,15 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index){
+        int actualIndex = first + index;
         if (index > item.length){
             return null;
         }
         else{
-            return item[(first + 1 + index)%item.length];
+            if(actualIndex > item.length){
+                actualIndex -= item.length;
+            }
+            return item[actualIndex];
         }
     }
 
@@ -152,19 +156,9 @@ public class ArrayDeque<T> {
         ArrayDeque<Integer> s1 = new ArrayDeque<>();
         
         s1.addFirst(10);
+
+        System.out.println(s1.removeLast());
         s1.addFirst(20);
-        s1.addFirst(30);
-        s1.printDeque();
-
-        s1.addLast(10);
-        s1.addLast(20);
-        s1.addLast(30);
-        s1.printDeque();
-        
-
-        s1.addFirst(40);
-        s1.addLast(40);
-        System.out.println(s1.removeFirst());
         System.out.println(s1.removeLast());
     } */
     
