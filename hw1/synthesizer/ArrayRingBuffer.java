@@ -1,10 +1,9 @@
 // TODO: Make sure to make this class a part of the synthesizer package
 package synthesizer;
 import java.util.Iterator;
-import java.util.Iterator;
 //TODO: Make sure to make this class and all of its methods public
 //TODO: Make sure to make this class extend AbstractBoundedQueue<t>
-public class ArrayRingBuffer<T>   extends AbstractBoundedQueue<T>{
+public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T>{
     /* Index for the next dequeue or peek. */
     private int first;            // index for the next dequeue or peek
     /* Index for the next enqueue. */
@@ -35,7 +34,7 @@ public class ArrayRingBuffer<T>   extends AbstractBoundedQueue<T>{
      */
     public void enqueue(T x) {
         // TODO: Enqueue the item. Don't forget to increase fillCount and update last.
-        if (this.capacity <= 0){
+        if (isFull()){
             throw new RuntimeException("Ring buffer overflow");
         }
         rb[last] = x;
@@ -56,7 +55,7 @@ public class ArrayRingBuffer<T>   extends AbstractBoundedQueue<T>{
      */
     public T dequeue() {
         // TODO: Dequeue the first item. Don't forget to decrease fillCount and update 
-        if (rb.length == 0){
+        if (isEmpty()){
             throw new RuntimeException("Ring buffer underflow");
         }
 
@@ -109,7 +108,7 @@ public class ArrayRingBuffer<T>   extends AbstractBoundedQueue<T>{
         }
     }
 
-
+/* 
     public static void main(String[] args) {
         BoundedQueue<Integer> a = new ArrayRingBuffer<Integer>(10);
         for (int i = 0; i < 10; i ++){
@@ -125,4 +124,5 @@ public class ArrayRingBuffer<T>   extends AbstractBoundedQueue<T>{
         }
         
     }
+    **/
 }
