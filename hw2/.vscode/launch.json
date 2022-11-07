@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch PercolationStats",
+            "request": "launch",
+            "mainClass": "hw2.PercolationStats",
+            "projectName": "hw2_6d71e02e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Percolation",
+            "request": "launch",
+            "mainClass": "hw2.Percolation",
+            "projectName": "hw2_6d71e02e"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch InteractivePercolationVisualizer",
+            "request": "launch",
+            "mainClass": "hw2.InteractivePercolationVisualizer",
+            "projectName": "hw2_6d71e02e",
+            "args": "10"
+        },
+        {
+            "type": "java",
+            "name": "Launch PercolationVisualizer",
+            "request": "launch",
+            "mainClass": "hw2.PercolationVisualizer",
+            "projectName": "hw2_6d71e02e",
+            "args": "inputFiles/greeting57.txt"
+        }
+    ]
+}
