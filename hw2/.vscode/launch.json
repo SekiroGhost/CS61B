@@ -30,7 +30,7 @@
             "request": "launch",
             "mainClass": "hw2.InteractivePercolationVisualizer",
             "projectName": "hw2_6d71e02e",
-            "args": "10"
+            "args": "1"
         },
         {
             "type": "java",

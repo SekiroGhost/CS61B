@@ -11,7 +11,7 @@ public class PercolationStats {
     public PercolationStats(int N, int T, PercolationFactory pf){
         if (N <= 0) throw new java.lang.IllegalArgumentException("N should be larger than 0!");
         if (T <= 0) throw new java.lang.IllegalArgumentException("T should be larger than 0!");
-        int[] results = new int[T];
+        double[] results = new double[T];
         for (int i = 0; i < T; i ++){
             Percolation testPercolation = pf.make(N);
             while (!testPercolation.percolates()){
@@ -20,6 +20,7 @@ public class PercolationStats {
                 testPercolation.open(row, col);
             }
             results[i] = testPercolation.numberOfOpenSites();
+            results[i] /= N * N;
         }
 
         this.mean = StdStats.mean(results);
@@ -48,7 +49,7 @@ public class PercolationStats {
 
     public static void main(String[] args) {
         PercolationFactory pf = new PercolationFactory();
-        PercolationStats test = new PercolationStats(20, 100, pf);
+        PercolationStats test = new PercolationStats(20, 1000, pf);
 
         System.out.println("The mean is " + test.mean());
         System.out.println("The stdev is " + test.stddev());

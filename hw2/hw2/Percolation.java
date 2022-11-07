@@ -27,6 +27,7 @@ public class Percolation {
     }
 
     public void open(int row, int col){
+        if (N <= 0) throw new java.lang.IllegalArgumentException();
         if (!checkIsIn(row, col)) throw new java.lang.IllegalArgumentException("Not in the rang");
         int index = N*row + col;
         if (openList[index] == 0){
@@ -87,7 +88,7 @@ public class Percolation {
 
 
      public static void main(String[] args) {
-        Percolation per = new Percolation(10);
-        per.open(0, 0);
+        Percolation per = new Percolation(0);
+        per.open(-1, 5);
     } 
 }
