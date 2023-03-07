@@ -54,12 +54,14 @@ public class Percolation {
     }
 
     public boolean isOpen(int row, int col){
+        if (N <= 0) throw new java.lang.IllegalArgumentException();
         if (!checkIsIn(row, col)) throw new java.lang.IllegalArgumentException("Not in the rang");
         int index = N * row + col;
         return openList[index] - 1 == 0;
     }
     
     public boolean isFull(int row, int col){
+        if (N <= 0) throw new java.lang.IllegalArgumentException();
         int index = row * N + col;
         if (!isOpen(row, col)) return false;
         if (antiBackwash.connected(toppest, index)) return true;
@@ -71,6 +73,7 @@ public class Percolation {
     }
 
     public boolean percolates(){
+        if (N <= 0) throw new java.lang.IllegalArgumentException();
         if (upList.connected(toppest, bottom)) return true;
         return false;
     }

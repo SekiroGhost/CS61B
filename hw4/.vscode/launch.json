@@ -6,39 +6,38 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch PercolationStats",
+            "name": "AlphabetEasyPuzzleSolver",
             "request": "launch",
-            "mainClass": "hw2.PercolationStats",
-            "projectName": "hw2_6d71e02e"
+            "mainClass": "hw4.puzzle.AlphabetEasyPuzzleSolver",
+            "projectName": "hw4_6d71e030"
         },
         {
             "type": "java",
-            "name": "Launch Percolation",
+            "name": "WordPuzzleSolver",
             "request": "launch",
-            "mainClass": "hw2.Percolation",
-            "projectName": "hw2_6d71e02e"
+            "mainClass": "hw4.puzzle.WordPuzzleSolver",
+            "projectName": "hw4_6d71e030"
         },
         {
             "type": "java",
-            "name": "Launch Current File",
+            "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
         {
             "type": "java",
-            "name": "Launch InteractivePercolationVisualizer",
+            "name": "CommonBugDetector",
             "request": "launch",
-            "mainClass": "hw2.InteractivePercolationVisualizer",
-            "projectName": "hw2_6d71e02e",
-            "args": "1"
+            "mainClass": "hw4.puzzle.CommonBugDetector",
+            "projectName": "hw4_6d71e030"
         },
         {
             "type": "java",
-            "name": "Launch PercolationVisualizer",
+            "name": "EightPuzzleSolver",
             "request": "launch",
-            "mainClass": "hw2.PercolationVisualizer",
-            "projectName": "hw2_6d71e02e",
-            "args": "inputFiles/input1.txt"
+            "mainClass": "hw4.puzzle.EightPuzzleSolver",
+            "projectName": "hw4_6d71e030",
+            "args": "./input/puzzle00.txt"
         }
     ]
 }

@@ -1,0 +1,7 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/zixuanchen/programming/CS61B_JAVA/library-sp18/**/*.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
